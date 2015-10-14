@@ -8,11 +8,11 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+    <link rel="stylesheet" href="style.css"/>
 
     <title>Main Page</title>
 </head>
-<body style="background-image:url('img/slide.png')">
+<body>
 
 <div class="navbar navbar-default">
     <div class="container">
@@ -21,20 +21,44 @@
                <h1>Main Page</h1>
             </div>
             <div class="col-xs-6 text-center col-sm-2 text-center col-md-2 col-lg-2">
-                <button type="submit" class="btn btn-primary" style="min-width:100px; margin:20px;">Login</button>
+                <button type="submit" class="btn btn-primary btn-link"><a href="index.html" id="login">Login</a></button>
             </div>
             <div class="col-xs-6 text-center col-sm-2  text-center col-md-2 col-lg-2">
-                <button type="submit" class="btn btn-default" style="min-width:100px; margin:20px">Register</button>
+                <button type="submit" class="btn btn-default">Register</button>
             </div>
             <div class="col-xs-12 text-center col-sm-2 text-center col-md-2 col-lg-2">
-                <button type="submit" class="btn btn-primary disabled" style="min-width:100px; margin:20px">Admin</button>
+                <button type="submit" class="btn btn-primary disabled">Admin</button>
             </div>
         </div>
     </div>
 </div>
 
+<div class="container" id="text">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-8">
+            <h3>Last Users:</h3>
+            <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th><p>Name:</p></th>
+                    <th><p>Surname:</p></th>
+                    <th><p>Country:</p></th>
+                </tr>
+                <tr>
+                    <td><p>Borja</p></td>
+                    <td><p>Benejam</p></td>
+                    <td><p>Spain</p></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4">
+            <img src="img/palm.jpg" class="img-circle" alt="palm"/>
+        </div>
+    </div>
+</div>
 
-<div id="footer" style="position:fixed; bottom:0;left:0;right:0;">
+<div id="footer">
     <div class="container">
         <p class="text-center"><span class="label label-warning">This was done by Borja</span></p>
     </div>
