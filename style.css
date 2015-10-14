@@ -2,12 +2,16 @@ body{
     background-image:url('img/slide.png');
 }
 button{
-    min-width:80px;
-    margin:20px;
+    min-width:75px;
+    max-width:75px;
+    margin-top:10px;
+
 }
 img{
     width: 250px;
     height:250px;
+    margin-top:50px;
+
 }
 #footer{
     position:fixed;
@@ -21,4 +25,16 @@ img{
 #login{
     color:white;
     text-decoration:none;
+}
+.glyphicon {
+    font-size:25px;
+    margin:15px;
+}
+
+#one{
+    max-width: 300px;
+    min-height:400px;
+    background-color:darkgray;
+
+    border-radius:10px;
 }
