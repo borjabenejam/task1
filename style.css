@@ -1,17 +1,21 @@
 body{
     background-image:url('img/slide.png');
 }
-button{
-    min-width:75px;
-    max-width:75px;
+.header-btn{
     margin-top:10px;
-
+    width:100%;
+    margin-bottom:4%;
 }
-img{
+.main-btn{
+    width:100%;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+img.portrait{
     width: 250px;
     height:250px;
     margin-top:50px;
-
+    opacity:0.9;
 }
 #footer{
     position:fixed;
@@ -19,22 +23,19 @@ img{
     left:0px;
     right:0px;
 }
-#text{
+.main-text{
     color:white;
-}
-#login{
-    color:white;
-    text-decoration:none;
 }
 .glyphicon {
     font-size:25px;
     margin:15px;
 }
 
-#one{
-    max-width: 300px;
-    min-height:400px;
+.cont{
+    width:40%;
+    min-width:275px;
     background-color:darkgray;
-
     border-radius:10px;
+    opacity:0.9;
+    margin-bottom:10px;
 }
