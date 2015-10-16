@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="style.css"/>
     <meta charset="UTF-8">
     <title>Login</title>
+
+    <script type="text/javascript">
+        function testName(){
+            var userokey = "borja";
+            var user = document.getElementById("user").value;
+            if(user == userokey){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+    </script>
 </head>
 <body>
     <div class="navbar navbar-default">
@@ -27,7 +40,7 @@
     </div>
 
     <div class="container cont">
-        <form class="form-horizontal">
+        <form class="form-horizontal" onsubmit="return testName();" action="index.html">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
                     <label for="user">Username:</label>
@@ -47,18 +60,16 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary main-btn">Login</button>
+                    <button type="submit" class="btn btn-primary main-btn" >Login</button>
                 </div>
             </div>
         </form>
     </div>
 
-    <div id="footer">
+<div id="footer">
         <div class="container">
             <p class="text-center"><span class="label label-warning">Website has been created by Borja</span></p>
         </div>
     </div>
-
-
 </body>
 </html>
