@@ -18,13 +18,17 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 align-center col-sm-6 align-left col-md-6 col-lg-6">
-               <h1>Main Page</h1>
+                <h1>Main Page</h1>
             </div>
             <div class="col-xs-4 col-sm-2 text-center col-md-2 col-lg-2">
-                <a href="login.html"><button class="btn btn-primary header-btn">Login</button></a>
+                <a href="login.html">
+                    <button class="btn btn-primary header-btn">Login</button>
+                </a>
             </div>
             <div class="col-xs-4 text-center col-sm-2  text-center col-md-2 col-lg-2">
-                <a href="register.html"><button class="btn btn-default header-btn ">Register</button></a>
+                <a href="register.html">
+                    <button class="btn btn-default header-btn ">Register</button>
+                </a>
             </div>
             <div class="col-xs-4 text-center col-sm-2 text-center col-md-2 col-lg-2">
                 <button type="submit" class="btn btn-primary disabled header-btn">Admin</button>
@@ -33,42 +37,159 @@
     </div>
 </div>
 
-<div class="container main-text">
+<div class="container" id="cont-video">
     <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-8">
-            <h3>Last Users:</h3>
-            <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <th><p>Name:</p></th>
-                    <th><p>Surname:</p></th>
-                    <th><p>Country:</p></th>
-                </tr>
-                <tr>
-                    <td><p>Borja</p></td>
-                    <td><p>Benejam</p></td>
-                    <td><p>Spain</p></td>
-                </tr>
-            </table>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titleDiv">
+            <p id="videoTitle">Borja's Video Player</p>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <video id="video" onended="playPause()">
+                <source id="videoSrc" src="video/dummy.mp4">
+                Your browser does not support the video element.
+            </video>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <img src="img/palm.jpg" class="img-circle portrait" alt="palm"/>
+    </div>
+    <div class="row" id="controls">
+        <div class="col-xs-6 col-sm-6 col-md-1 col-lg-1 borderStyle">
+            <button type="text" class="btn-default box" onclick="playPause()"><img src="icons/play.png" class="ico"
+                                                                                   id="PlayPauseID"/></button>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-1 col-lg-1 borderStyle">
+            <button type="text" class="btn-default box" onclick="stop()"><img src="icons/stop.png" class="ico"/>
+            </button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" class="btn-default box" onclick="speedLess()"><<</button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <p id="speed" class="box info">X 1</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" class="btn-default box" onclick="speedUp()">>></button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" class="btn-default box" onclick="lessVolume()">Vol-</button>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <p id="volume" class="box info">100%</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" class="btn-default box" onclick="moreVolume()">Vol+</button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" id="noVol" class="box" onclick="noVolume()"><img src="icons/lessVolume.png"
+                                                                                 class="ico"/>
+            </button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" id="loopBtn" class="btn-default box" onclick="loop()"><img src="icons/loop.jpg"
+                                                                                           class="ico"/></button>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
+            <button type="text" id="fs" class="btn-default box" onclick="fullScreen()"><img src="icons/FScreen.png"
+                                                                                            class="ico"/></button>
         </div>
     </div>
 </div>
+
 
 <div id="footer">
     <div class="container">
         <p class="text-center"><span class="label label-warning">Website has been created by Borja</span></p>
     </div>
 </div>
+<script type="text/javascript">
+    var video = document.getElementById("video");
+    function playPause() {
+        if (document.getElementById("PlayPauseID").getAttribute("src") == "icons/play.png") {
+            document.getElementById("PlayPauseID").setAttribute("src", "icons/pause.png");
+            video.play();
+        } else {
+            document.getElementById("PlayPauseID").setAttribute("src", "icons/play.png");
+            video.pause();
+        }
+    }
+    function pause() {
+        video.pause();
+    }
+    function stop() {
+        video.currentTime = 0;
+        video.pause();
+        playPause();
+    }
+    function refreshSpeed() {
+        document.getElementById("speed").innerText = "X" + video.playbackRate.toFixed(1);
+    }
+    function speedUp() {
+        video.playbackRate = video.playbackRate + 0.1;
+        refreshSpeed();
+    }
+    function speedLess() {
+        video.playbackRate = video.playbackRate - 0.1;
+        refreshSpeed();
+    }
+    function refreshVolumeLabel() {
+        document.getElementById("volume").innerText = (video.volume * 100).toFixed(0) + "%";
+    }
+    function moreVolume() {
+        //To Avoid Exceptions of > 100% Volume:
+        if (video.volume == 1) {
+            alert("Not able to increase more the Volume!");
+        } else {
+            video.volume = video.volume + 0.1;
+            refreshVolumeLabel();
+        }
+
+    }
+    function lessVolume() {
+        video.volume = video.volume - 0.1;
+        refreshVolumeLabel();
+    }
+    function pressedButton(element) {
+        document.getElementById(element).style.borderRadius = "30px";
+        document.getElementById(element).style.border = "5px solid green";
+    }
+    function notPressedButton(element) {
+        document.getElementById(element).style.borderRadius = "0px";
+        document.getElementById(element).style.border = "none";
+    }
+
+    function noVolume() {
+        if (video.volume > 0) {
+            pressedButton("noVol");
+            video.volume = 0;
+        } else {
+            notPressedButton("noVol");
+            video.volume = 0.2;
+        }
+        refreshVolumeLabel();
+    }
+    function loop() {
+        if (video.loop == false) {
+            pressedButton("loopBtn");
+            video.loop = true;
+        } else {
+            notPressedButton("loopBtn");
+            video.loop = false;
+        }
+
+    }
+    function fullScreen() {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullScreen) {
+            video.webkitRequestFullScreen();
+        } else if (video.msRequestFullScreen) {
+            video.msRequestFullScreen();
+        }
+    }
 
 
-
-
-
-
-
+</script>
 </body>
 </html>

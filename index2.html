@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+    <!--<link rel="stylesheet" href="style.css"/>-->
+
+    <title>Main Page</title>
+</head>
+<body onload="setColor()">
+<style>
+    .box {
+        height: 200px;
+        width: 200px;
+        display: inline-block;
+        border: 2px solid black;
+    }
+</style>
+<div class="container" style="background-color:grey; margin-top:20px; padding:10px;">
+    <div class="row">
+        <div class="col-xs-4">
+            <div id="one" ondragend="dragEnded(event)" ondragstart="startDragging(event)"  ondrop="drop(event)" draggable="true" ondragenter="setBorderSize(event, '4px')" ondragleave="setBorderSize(event,'2px')" class="box" style="background:grey"></div>
+        </div>
+        <div class="col-xs-4">
+            <div id="two" ondragend="dragEnded(event)" ondragstart="startDragging(event)"  ondrop="drop(event)" draggable="true" ondragenter="setBorderSize(event, '4px')" ondragleave="setBorderSize(event,'2px')" class="box" style="background:blue"></div>
+        </div>
+        <div class="col-xs-4">
+            <div id="three" ondragend="dragEnded(event)" ondragstart="startDragging(event)"  ondrop="drop(event)" draggable="true" ondragenter="setBorderSize(event, '4px')" ondragleave="setBorderSize(event,'2px')" class="box" style="background:red"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div id="four"  draggable = "true" class="box" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="setBorderSize(event, '4px')" ondragleave="setBorderSize(event, '2px')"></div>
+        </div>
+        <div class="col-xs-4">
+            <div id="five"  draggable = "true" class="box" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="setBorderSize(event, '4px')" ondragleave="setBorderSize(event, '2px')"></div>
+        </div>
+        <div class="col-xs-4">
+            <div id="six"  draggable = "true" class="box" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="setBorderSize(event, '4px')" ondragleave="setBorderSize(event, '2px')"></div>
+        </div>
+    </div>
+</div>
+<script>
+    function setColor() {
+        function gen() {
+            var a = Math.floor((Math.random() * 255) + 1);
+            var b = Math.floor((Math.random() * 255) + 1);
+            var c = Math.floor((Math.random() * 255) + 1);
+            var col = "rgb(" + a + "," + b + "," + c + ")";
+            return col;
+        }
+        document.getElementById("one").style.backgroundColor = gen();
+        document.getElementById("two").style.backgroundColor = gen();
+        document.getElementById("three").style.backgroundColor = gen();
+
+        document.getElementById("four").style.backgroundColor = gen();
+        document.getElementById("five").style.backgroundColor = gen();
+        document.getElementById("six").style.backgroundColor = gen();
+    }
+    function startDragging(evt) {
+        evt.dataTransfer.setData("Color", evt.target.style.background);
+        evt.dataTransfer.setData("id",evt.target.id);
+
+        evt.target.style.opacity = 0.3;
+    }
+    function setBorderSize(evt, size) {
+        evt.currentTarget.style.border = size + " solid black";
+
+    }
+    function allowDrop(evt) {
+        evt.preventDefault();
+        console.log("ALLOW");
+    }
+    function drop(evt) {
+        var color = evt.dataTransfer.getData("Color");
+        var id = evt.dataTransfer.getData("id");
+        var color2 = evt.target.style.backgroundColor;
+        console.log("Color 1:"+color);
+        console.log("Color 2:"+color2);
+
+        evt.currentTarget.style.background = color;
+        document.getElementById(id).style.backgroundColor = color2;
+
+        setBorderSize(evt, '2px');
+    }
+    function dragEnded(evt) {
+        evt.target.style.opacity = 1.0;
+    }
+</script>
+</body>
+</html>

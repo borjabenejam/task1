@@ -26,7 +26,7 @@ img.portrait{
 .main-text{
     color:white;
 }
-.glyphicon {
+#glyph{
     font-size:25px;
     margin:15px;
 }
@@ -34,8 +34,58 @@ img.portrait{
 .cont{
     width:40%;
     min-width:275px;
-    background-color:darkgray;
+    background-color:grey;
     border-radius:10px;
     opacity:0.9;
     margin-bottom:10px;
+}
+img.ico{
+    width:25px;
+    height:25px;
+}
+
+#cont-video{
+    max-width:90%;
+    text-align:center;
+    padding:2%;
+    background-color:grey;
+    border:3px solid white;
+}
+#video{
+    border:10px solid white;
+    border-radius:5px;
+    max-width: 90%;
+}
+.box{
+    width:50px;
+    height:50px;
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+.borderStyle{
+    border:1px solid white;
+}
+
+.info{
+    margin-top:10px;
+    font-size:25px;
+    color:white;
+    text-decoration:underline;
+    margin-bottom: 10px;
+}
+#controls{
+    background-color:red;
+    border:10px solid white;
+    border-radius:10px;
+    margin-top:4%;
+}
+.titleDiv{
+    background-color:red;
+    border:5px solid white;
+    border-radius:10px;
+    margin-bottom:2%;
+    font-size:25px;
+    color:white;
+    text-shadow: 2px 2px 4px black;
 }
