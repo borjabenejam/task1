@@ -8,176 +8,198 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/borjaVideoPlayer.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
 
     <title>Main Page</title>
 </head>
 <body>
-
-<div class="navbar navbar-default">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 align-center col-sm-6 align-left col-md-6 col-lg-6">
-                <h1>Main Page</h1>
+<header>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 align-center col-sm-6 align-left col-md-6 col-lg-6">
+                    <h1>Main Page</h1>
+                </div>
+                <div class="col-xs-4 col-sm-2 text-center col-md-2 col-lg-2">
+                    <a href="login.html">
+                        <button class="btn btn-primary header-btn">Login</button>
+                    </a>
+                </div>
+                <div class="col-xs-4 text-center col-sm-2  text-center col-md-2 col-lg-2">
+                    <a href="register.html">
+                        <button class="btn btn-default header-btn ">Register</button>
+                    </a>
+                </div>
+                <div class="col-xs-4 text-center col-sm-2 text-center col-md-2 col-lg-2">
+                    <button type="submit" class="btn btn-primary disabled header-btn">Admin</button>
+                </div>
             </div>
-            <div class="col-xs-4 col-sm-2 text-center col-md-2 col-lg-2">
-                <a href="login.html">
-                    <button class="btn btn-primary header-btn">Login</button>
-                </a>
-            </div>
-            <div class="col-xs-4 text-center col-sm-2  text-center col-md-2 col-lg-2">
-                <a href="register.html">
-                    <button class="btn btn-default header-btn ">Register</button>
-                </a>
-            </div>
-            <div class="col-xs-4 text-center col-sm-2 text-center col-md-2 col-lg-2">
-                <button type="submit" class="btn btn-primary disabled header-btn">Admin</button>
-            </div>
         </div>
     </div>
-</div>
+</header>
+<main>
+    <div class="container text-center main-cont">
+        <div id="disp">
 
-<div class="container" id="cont-video">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titleDiv">
-            <p id="videoTitle">Borja's Video Player</p>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-12 col-lg-12">
-            <video id="video" onended="playPause()">
-                <source id="videoSrc" src="video/dummy.mp4">
-                Your browser does not support the video element.
-            </video>
-        </div>
-    </div>
-    <div class="row" id="controls">
-        <div class="col-xs-6 col-sm-6 col-md-1 col-lg-1 borderStyle">
-            <button type="text" class="btn-default box" onclick="playPause()"><img src="icons/play.png" class="ico"
-                                                                                   id="PlayPauseID"/></button>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-1 col-lg-1 borderStyle">
-            <button type="text" class="btn-default box" onclick="stop()"><img src="icons/stop.png" class="ico"/>
-            </button>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" class="btn-default box" onclick="speedLess()"><<</button>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <p id="speed" class="box info">X 1</p>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" class="btn-default box" onclick="speedUp()">>></button>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" class="btn-default box" onclick="lessVolume()">Vol-</button>
-        </div>
+        <div id="disp2">
 
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <p id="volume" class="box info">100%</p>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" class="btn-default box" onclick="moreVolume()">Vol+</button>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" id="noVol" class="box" onclick="noVolume()"><img src="icons/lessVolume.png"
-                                                                                 class="ico"/>
-            </button>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" id="loopBtn" class="btn-default box" onclick="loop()"><img src="icons/loop.jpg"
-                                                                                           class="ico"/></button>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 borderStyle">
-            <button type="text" id="fs" class="btn-default box" onclick="fullScreen()"><img src="icons/FScreen.png"
-                                                                                            class="ico"/></button>
+        <div id="disp3">
+
         </div>
     </div>
-</div>
-
-
-<div id="footer">
-    <div class="container">
-        <p class="text-center"><span class="label label-warning">Website has been created by Borja</span></p>
-    </div>
-</div>
+</main>
+<footer>
+</footer>
 <script type="text/javascript">
-    var video = document.getElementById("video");
-    function playPause() {
-        if (document.getElementById("PlayPauseID").getAttribute("src") == "icons/play.png") {
-            document.getElementById("PlayPauseID").setAttribute("src", "icons/pause.png");
+    /**
+     * var video {object refers to HTML video}
+     * Query to set the Poster
+     */
+    new jQuery.borja.videoPlayer(jQuery("#disp"), null, {url:"video/dummy.mp4"}); //rendered next to input
+
+
+    //var video = document.getElementById("video");
+    /**
+     * ShortCuts:
+     * spaceBar: Play/Pause
+     * s: Stop
+     * +: More Volume
+     * -: Less Volume
+     * >: Faster
+     * <: Slowly
+     * m: Mute
+     * l: loop
+     *
+     **/
+    /*
+    $(document).bind('keydown', 'right', function (e) {
+        switch (e.keyCode) {
+            case 32:
+                $("button.play").click();
+                break;
+            case 83:
+                $("button.stop").click();
+                break;
+            case 107:
+                $("button.moreVolume").click();
+                break;
+            case 109:
+                $("button.lessVolume").click();
+                break;
+            case 37:
+                $("button.slowly").click();
+                break;
+            case 39:
+                $("button.faster").click();
+                break;
+            case 77:
+                $("button.noVolume").click();
+                break;
+            case 76:
+                $("button.loop").click();
+                break;
+            case 70:
+                $("button.fullScreen").click();
+                break;
+        }
+    });
+    /**
+     *  button.play->Event {made change Span playPauseIcon depending on actual Icon}
+
+    $("button.play").click(function () {
+        if ($("#playPauseIcon").attr("class") == "glyphicon glyphicon-play") {
+            $("#playPauseIcon").prop("class", "glyphicon glyphicon-pause");
             video.play();
         } else {
-            document.getElementById("PlayPauseID").setAttribute("src", "icons/play.png");
+            $("#playPauseIcon").prop("class", "glyphicon glyphicon-play");
             video.pause();
         }
-    }
-    function pause() {
-        video.pause();
-    }
-    function stop() {
+    });
+    /**
+     * button.stop->Event {Tests video's currentTime, become
+      *                         button.play on 'pause',
+      *                         currentTime on 0
+      *                         Video on Pause()}
+     */
+    /*
+    $("button.stop").click(function () {
+        if (video.currentTime > 0) {
+            $("button.play").click();
+        }
+        if ($("#playPauseIcon").attr("class") == "glyphicon glyphicon-pause") {
+            $("#playPauseIcon").prop("class", "glyphicon glyphicon-play");
+        }
         video.currentTime = 0;
         video.pause();
-        playPause();
-    }
+    });
     function refreshSpeed() {
-        document.getElementById("speed").innerText = "X" + video.playbackRate.toFixed(1);
+        document.getElementById("speedValue").innerText = "X" + video.playbackRate.toFixed(1);
     }
-    function speedUp() {
-        video.playbackRate = video.playbackRate + 0.1;
-        refreshSpeed();
-    }
-    function speedLess() {
+    $("button.slowly").click(function () {
         video.playbackRate = video.playbackRate - 0.1;
         refreshSpeed();
-    }
+    });
+    $("button.faster").click(function () {
+        video.playbackRate = video.playbackRate + 0.1;
+        refreshSpeed();
+    });
     function refreshVolumeLabel() {
-        document.getElementById("volume").innerText = (video.volume * 100).toFixed(0) + "%";
+        document.getElementById("volumeValue").innerText = (video.volume * 100).toFixed(0) + "%";
     }
-    function moreVolume() {
+    $("button.moreVolume").click(function () {
         //To Avoid Exceptions of > 100% Volume:
-        if (video.volume == 1) {
-            alert("Not able to increase more the Volume!");
-        } else {
-            video.volume = video.volume + 0.1;
+        if (video.volume == 0) {
+            $("button.noVolume").click();
+        }
+        video.volume = video.volume + 0.1;
+        refreshVolumeLabel();
+    });
+    $("button.lessVolume").click(function () {
+        //To avoid Exceptions of < 0% Volume:
+        if (video.volume > 0.1) {
+            video.volume = video.volume - 0.1;
             refreshVolumeLabel();
         }
-
-    }
-    function lessVolume() {
-        video.volume = video.volume - 0.1;
-        refreshVolumeLabel();
-    }
-    function pressedButton(element) {
-        document.getElementById(element).style.borderRadius = "30px";
-        document.getElementById(element).style.border = "5px solid green";
-    }
-    function notPressedButton(element) {
-        document.getElementById(element).style.borderRadius = "0px";
-        document.getElementById(element).style.border = "none";
-    }
-
-    function noVolume() {
-        if (video.volume > 0) {
-            pressedButton("noVol");
-            video.volume = 0;
-        } else {
-            notPressedButton("noVol");
-            video.volume = 0.2;
+        if (video.volume < 0.1) {
+            $("button.noVolume").click();
         }
+
         refreshVolumeLabel();
+    });
+    $("button.noVolume").click(function () {
+        if (video.volume == 0) {
+            pressedButton("noVol");
+            video.volume = 0.1;
+            refreshVolumeLabel()
+        } else {
+            pressedButton("noVol");
+            video.volume = 0.0;
+            refreshVolumeLabel()
+        }
+    });
+    function pressedButton(element) {
+        if (document.getElementById(element).style.color == "red") {
+            document.getElementById(element).style.color = "black";
+        } else {
+            document.getElementById(element).style.color = "red";
+        }
     }
-    function loop() {
+    $("button.loop").click(function () {
         if (video.loop == false) {
             pressedButton("loopBtn");
             video.loop = true;
         } else {
-            notPressedButton("loopBtn");
+            pressedButton("loopBtn");
             video.loop = false;
         }
-
-    }
-    function fullScreen() {
+    });
+    $("button.fullScreen").click(function () {
         if (video.requestFullscreen) {
             video.requestFullscreen();
         } else if (video.mozRequestFullScreen) {
@@ -187,9 +209,11 @@
         } else if (video.msRequestFullScreen) {
             video.msRequestFullScreen();
         }
-    }
-
+    });
+    */
 
 </script>
 </body>
 </html>
+
+
