@@ -8,10 +8,6 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="js/borjaVideoPlayer.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
 
     <title>Main Page</title>
@@ -43,174 +39,28 @@
 </header>
 <main>
     <div class="container text-center main-cont">
-        <div id="disp">
+        <div class="row">
+            <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12' id="disp">
 
+            </div>
         </div>
-        <div id="disp2">
 
-        </div>
         <div id="disp3">
 
         </div>
+
+    </div>
     </div>
 </main>
 <footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/borjaVideoPlayer.js"></script>
 </footer>
 <script type="text/javascript">
-    /**
-     * var video {object refers to HTML video}
-     * Query to set the Poster
-     */
-    new jQuery.borja.videoPlayer(jQuery("#disp"), null, {url:"video/dummy.mp4"}); //rendered next to input
 
-
-    //var video = document.getElementById("video");
-    /**
-     * ShortCuts:
-     * spaceBar: Play/Pause
-     * s: Stop
-     * +: More Volume
-     * -: Less Volume
-     * >: Faster
-     * <: Slowly
-     * m: Mute
-     * l: loop
-     *
-     **/
-    /*
-    $(document).bind('keydown', 'right', function (e) {
-        switch (e.keyCode) {
-            case 32:
-                $("button.play").click();
-                break;
-            case 83:
-                $("button.stop").click();
-                break;
-            case 107:
-                $("button.moreVolume").click();
-                break;
-            case 109:
-                $("button.lessVolume").click();
-                break;
-            case 37:
-                $("button.slowly").click();
-                break;
-            case 39:
-                $("button.faster").click();
-                break;
-            case 77:
-                $("button.noVolume").click();
-                break;
-            case 76:
-                $("button.loop").click();
-                break;
-            case 70:
-                $("button.fullScreen").click();
-                break;
-        }
-    });
-    /**
-     *  button.play->Event {made change Span playPauseIcon depending on actual Icon}
-
-    $("button.play").click(function () {
-        if ($("#playPauseIcon").attr("class") == "glyphicon glyphicon-play") {
-            $("#playPauseIcon").prop("class", "glyphicon glyphicon-pause");
-            video.play();
-        } else {
-            $("#playPauseIcon").prop("class", "glyphicon glyphicon-play");
-            video.pause();
-        }
-    });
-    /**
-     * button.stop->Event {Tests video's currentTime, become
-      *                         button.play on 'pause',
-      *                         currentTime on 0
-      *                         Video on Pause()}
-     */
-    /*
-    $("button.stop").click(function () {
-        if (video.currentTime > 0) {
-            $("button.play").click();
-        }
-        if ($("#playPauseIcon").attr("class") == "glyphicon glyphicon-pause") {
-            $("#playPauseIcon").prop("class", "glyphicon glyphicon-play");
-        }
-        video.currentTime = 0;
-        video.pause();
-    });
-    function refreshSpeed() {
-        document.getElementById("speedValue").innerText = "X" + video.playbackRate.toFixed(1);
-    }
-    $("button.slowly").click(function () {
-        video.playbackRate = video.playbackRate - 0.1;
-        refreshSpeed();
-    });
-    $("button.faster").click(function () {
-        video.playbackRate = video.playbackRate + 0.1;
-        refreshSpeed();
-    });
-    function refreshVolumeLabel() {
-        document.getElementById("volumeValue").innerText = (video.volume * 100).toFixed(0) + "%";
-    }
-    $("button.moreVolume").click(function () {
-        //To Avoid Exceptions of > 100% Volume:
-        if (video.volume == 0) {
-            $("button.noVolume").click();
-        }
-        video.volume = video.volume + 0.1;
-        refreshVolumeLabel();
-    });
-    $("button.lessVolume").click(function () {
-        //To avoid Exceptions of < 0% Volume:
-        if (video.volume > 0.1) {
-            video.volume = video.volume - 0.1;
-            refreshVolumeLabel();
-        }
-        if (video.volume < 0.1) {
-            $("button.noVolume").click();
-        }
-
-        refreshVolumeLabel();
-    });
-    $("button.noVolume").click(function () {
-        if (video.volume == 0) {
-            pressedButton("noVol");
-            video.volume = 0.1;
-            refreshVolumeLabel()
-        } else {
-            pressedButton("noVol");
-            video.volume = 0.0;
-            refreshVolumeLabel()
-        }
-    });
-    function pressedButton(element) {
-        if (document.getElementById(element).style.color == "red") {
-            document.getElementById(element).style.color = "black";
-        } else {
-            document.getElementById(element).style.color = "red";
-        }
-    }
-    $("button.loop").click(function () {
-        if (video.loop == false) {
-            pressedButton("loopBtn");
-            video.loop = true;
-        } else {
-            pressedButton("loopBtn");
-            video.loop = false;
-        }
-    });
-    $("button.fullScreen").click(function () {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullScreen) {
-            video.webkitRequestFullScreen();
-        } else if (video.msRequestFullScreen) {
-            video.msRequestFullScreen();
-        }
-    });
-    */
+    new jQuery.borja.videoPlayer(jQuery("#disp"), null, {url:"video/dummy.mp4",width:'1000px'}); //rendered next to input
 
 </script>
 </body>
