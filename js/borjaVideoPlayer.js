@@ -305,7 +305,7 @@
          * X : save data with LocalStorage.
          **/
 
-        $(document).bind('keydown', 'right', function (e) {
+        $('.videoCont').bind('keydown', 'right', function (e) {
             console.log(e.keyCode);
             switch (e.keyCode) {
                 case 32:
